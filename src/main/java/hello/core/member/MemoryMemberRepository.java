@@ -1,9 +1,11 @@
 package hello.core.member;
 
+import hello.core.order.OrderService;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class MemoryMemberRepository implements MemberReposiroty{
+public class MemoryMemberRepository implements MemberReposiroty {
 
 	private static Map<Long, Member> store = new HashMap<>();
 
