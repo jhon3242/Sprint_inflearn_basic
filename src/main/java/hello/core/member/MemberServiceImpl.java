@@ -11,6 +11,8 @@ public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	public MemberServiceImpl(MemberReposiroty memberReposiroty) {
+		System.out.println("memberReposiroty = " + memberReposiroty);
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		this.memberReposiroty = memberReposiroty;
 	}
 

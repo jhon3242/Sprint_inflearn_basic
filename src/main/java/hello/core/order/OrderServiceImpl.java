@@ -7,23 +7,17 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberReposiroty;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
-//	private final MemberReposiroty memberReposiroty = new MemoryMemberRepository();
-//	private final DiscountPolicy discountPolicy = new FIxDiscountPolicy();
-//	private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-	private final MemberReposiroty memberReposiroty;
-	private final DiscountPolicy discountPolicy;
+	private MemberReposiroty memberReposiroty;
+	private DiscountPolicy discountPolicy;
 
-	@Autowired
-	public OrderServiceImpl(MemberReposiroty memberReposiroty, DiscountPolicy discountPolicy) {
-		this.memberReposiroty = memberReposiroty;
-		this.discountPolicy = discountPolicy;
-	}
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {

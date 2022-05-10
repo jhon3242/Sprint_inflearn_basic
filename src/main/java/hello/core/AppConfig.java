@@ -20,6 +20,7 @@ public class AppConfig {
 
 	@Bean
 	public MemberReposiroty memberRepository() {
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("call AppConfig.memberRepository");
 		return new MemoryMemberRepository();
 	}
@@ -27,7 +28,8 @@ public class AppConfig {
 	@Bean
 	public OrderService orderService(){
 		System.out.println("call AppConfig.orderService");
-		return new OrderServiceImpl(memberRepository() , discountPolicy());
+//		return new OrderServiceImpl(memberRepository() , discountPolicy());
+		return null;
 	}
 
 	@Bean
