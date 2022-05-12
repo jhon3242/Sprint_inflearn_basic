@@ -1,15 +1,10 @@
 package hello.core.order;
 
-import hello.core.CoreApplication;
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FIxDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberReposiroty;
-import hello.core.member.MemoryMemberRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,7 +15,7 @@ public class OrderServiceImpl implements OrderService{
 	private DiscountPolicy discountPolicy;
 
 	@Autowired
-	public OrderServiceImpl(MemberReposiroty memberReposiroty, DiscountPolicy discountPolicy) {
+	public OrderServiceImpl(MemberReposiroty memberReposiroty, @MainDiscountPolicy  DiscountPolicy discountPolicy) {
 		this.memberReposiroty = memberReposiroty;
 		this.discountPolicy = discountPolicy;
 	}
