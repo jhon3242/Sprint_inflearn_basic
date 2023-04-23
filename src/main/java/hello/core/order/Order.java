@@ -45,6 +45,10 @@ public class Order {
 		this.discountPrice = discountPrice;
 	}
 
+	public int calculatePrice() {
+		return this.itemPrice - this.discountPrice;
+	}
+
 	@Override
 	public String toString() {
 		return "Order{" +
