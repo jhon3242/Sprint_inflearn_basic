@@ -13,7 +13,7 @@ class MemberServiceImplTest {
 		// given
 		Member member = new Member(1L, "memberA", Grade.BASIC);
 
-		// when
+		// when현
 		memberService.join(member);
 		Member findMember = memberService.findMember(1L);
 
